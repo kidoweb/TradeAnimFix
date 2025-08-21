@@ -1,0 +1,128 @@
+;camping
+[logic@ds_lesop_camp_work_1]
+active = animpoint@ds_lesop_camp_work_1
+prior = 45
+
+[logic@ds_lesop_camp_work_2]
+active = animpoint@ds_lesop_camp_work_2
+prior = 45
+
+[logic@ds_lesop_camp_work_3]
+active = animpoint@ds_lesop_camp_work_3
+prior = 45
+
+[logic@ds_lesop_camp_work_4]
+active = animpoint@ds_lesop_camp_work_4
+prior = 45
+
+[logic@ds_lesop_camp_work_5]
+active = animpoint@ds_lesop_camp_work_5
+prior = 45
+
+[animpoint@ds_lesop_camp_work_1]
+cover_name = ds_lesop_ap1
+use_camp = true
+turn_on_campfire = true
+
+[animpoint@ds_lesop_camp_work_2]
+cover_name = ds_lesop_ap2
+use_camp = true
+turn_on_campfire = true
+
+[animpoint@ds_lesop_camp_work_3]
+cover_name = ds_lesop_ap3
+use_camp = true
+turn_on_campfire = true
+
+[animpoint@ds_lesop_camp_work_4]
+cover_name = ds_lesop_ap4
+use_camp = true
+turn_on_campfire = true
+
+[animpoint@ds_lesop_camp_work_5]
+cover_name = ds_lesop_ap5
+use_camp = true
+turn_on_campfire = true
+
+[logic@ds_lesop_trader]
+suitable = {=is_npc_match(trader)} true
+prior = 200
+trade = misc\trade\kordon_ferma.ltx
+active = animpoint@ds_lesop_trader_new
+level_spot = trader
+dont_keep_items = true
+
+[animpoint@ds_lesop_trader_new]
+meet = meet
+cover_name = ds_lesop_ap3
+avail_animations = jup_b41_novikov_stand
+combat_ignore_cond = true
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[logic@ds_lesop_mechanic]
+suitable = {=is_npc_match(mechanic)} true
+prior = 200
+active = animpoint@ds_lesop_mechanic
+level_spot = mechanic
+dont_keep_items = true
+
+[animpoint@ds_lesop_mechanic]
+meet = meet
+cover_name = ds_lesop_mechanic
+avail_animations = jup_b41_novikov_stand
+combat_ignore_cond = true
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[logic@ds_lesop_medic]
+suitable = {=is_npc_match(mechanic)} true
+prior = 200
+active = animpoint@ds_lesop_medic
+level_spot = medic
+dont_keep_items = true
+
+[animpoint@ds_lesop_medic]
+meet = meet
+cover_name = ds_lesop_medic
+avail_animations = jup_b41_novikov_stand
+combat_ignore_cond = true
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[logic@ds_lesop_barmen]
+suitable = {=is_npc_match(barmen)} true
+prior = 200
+trade = misc\trade\trade_csky_barman.ltx
+active = animpoint@ds_lesop_barmen
+level_spot = trader
+dont_keep_items = true
+
+[animpoint@ds_lesop_barmen]
+meet = meet
+cover_name = ds_lesop_barmen
+avail_animations = jup_b41_novikov_stand
+combat_ignore_cond = true
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[logic@ds_lesop_leader]
+suitable = {=check_npc_name(sim_default_greh_leader_voron)} true
+level_spot = {!sameFaction} leader, {+actor_bought_leader} nil, leader
+prior = 200
+active = animpoint@ds_lesop_leader
+
+[animpoint@ds_lesop_leader]
+meet = meet
+cover_name = ds_lesop_leader
+avail_animations = fold_arms
+combat_ignore_cond = true
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+can_select_weapon = true
+dont_keep_items = false
